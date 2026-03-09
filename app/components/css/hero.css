@@ -1,0 +1,154 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  color: #ffffff;
+  font-family: "Satoshi", sans-serif;
+}
+
+.hero-bg {
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  height: 100%;
+  max-width: 960px;
+  padding: 120px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-logo {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+}
+
+.hero-logo img {
+  width: 220px;
+  height: auto;
+}
+
+.hero-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.hero-badge {
+  background-color: #00ffff;
+  color: #25286a;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 14px;
+  color: #00ffff;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-size: 46px;
+  font-weight: 200;
+  line-height: 1.3;
+  color: #f5ab40;
+  margin-bottom: 28px;
+  letter-spacing: -0.02em;
+}
+
+.first-line {
+  font-weight: 700;
+}
+
+.hero-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+  }
+
+  .hero-content {
+    align-items: flex-start;
+    text-align: left;
+    padding: 96px 24px 40px; 
+  }
+
+  .hero-logo {
+    top: 20px;
+    left: 24px;
+  }
+
+  .hero-logo img {
+    width: 190px;
+  }
+
+  .hero-badge-row {
+    margin-top: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+  
+  .hero-info p {
+    font-size: 14px;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 350px) {
+  .hero-content {
+    padding: 80px 16px 32px;
+  }
+
+  .hero-logo {
+    top: 16px;
+    left: 16px;
+  }
+
+  .hero-logo img {
+    width: 160px; 
+  }
+
+  .hero-badge-row {
+    margin-top: 10px;
+    gap: 6px;
+  }
+
+  .hero-title {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  .hero-info p {
+    font-size: 13px;
+  }
+}

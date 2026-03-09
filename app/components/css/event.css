@@ -1,0 +1,137 @@
+.agenda {
+  background: #00f5f5;
+  padding: 30px 20px;
+  font-family: "Satoshi", sans-serif;
+}
+
+.agenda-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.agenda-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1D4DF4;
+  margin-bottom: 36px;
+}
+
+.agenda-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.agenda-card {
+  background: #ffffff;
+  padding: 26px 24px 30px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.agenda-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(29, 77, 244, 0.15);
+}
+
+
+.agenda-card:hover h3 {
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.agenda-card:hover .agenda-speaker {
+  color: #1D4DF4;
+  font-weight: 600;
+  transform: translateX(5px);
+  transition: all 0.3s ease;
+}
+
+
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+  50% {
+    box-shadow: 0 10px 30px rgba(29, 77, 244, 0.2);
+  }
+  100% {
+    box-shadow: 0 15px 35px rgba(29, 77, 244, 0.15);
+  }
+}
+
+.agenda-card:hover {
+  animation: pulse 1.5s infinite;
+}
+
+.agenda-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  min-height: 50px;
+  color: #1D4DF4;
+  margin-bottom: 18px;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.agenda-speaker {
+  font-size: 15px;
+  font-weight: 600;
+  min-height: 32px;
+  color: #000000;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.agenda-text {
+  font-size: 15px;
+  color: #000000;
+  flex-grow: 1;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 900px) {
+  .agenda-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .agenda-card {
+    padding: 24px;
+  }
+    .agenda-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .agenda {
+    padding: 40px 16px;
+  }
+
+  .agenda-title {
+    font-size: 20px;
+  }
+
+  .agenda-card h3 {
+    font-size: 14px;
+    min-height: 10px;
+  }
+  
+  .agenda-speaker {
+    min-height: 10px;
+  }
+  
+  .agenda-text {
+    font-size: 13px;
+  }
+}

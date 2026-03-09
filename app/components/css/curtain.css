@@ -1,0 +1,253 @@
+.behind {
+  background: #ffffff;
+  padding: 30px 20px;
+  font-family: "Satoshi", sans-serif;
+}
+
+.behind-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0px;
+  align-items: flex-start;
+}
+.behind-left {
+  flex: 1;
+}
+
+.behind-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #F5AB40;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.behind-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.behind-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+}
+
+.behind-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #000000;
+}
+
+.behind-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 2px;
+  height: 14px;
+  background: #F5AB40E5;
+}
+
+.behind-cta {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  max-width: 520px;
+}
+
+.behind-cta input {
+  flex: 1;
+  height: 48px;
+  border: 1px solid #d0d0d0;
+  border-right: none;
+  padding: 0 14px;
+  font-size: 14px;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+}
+
+.behind-cta button {
+  height: 48px;
+  padding: 0 26px;
+  background: #F5AB40E5;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+}
+
+.behind-right {
+  flex: 0.8;
+  position: relative;
+  min-height: 400px;
+}
+.behind-img{
+  height: 400px;
+  object-fit: cover;
+}
+
+.input-wrap {
+  position: relative;
+  flex: 1;
+  width: 100%;
+}
+
+.mail-icons {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+.input-wrap input {
+  width: 100%;
+  height: 48px;
+  padding-left: 42px; 
+  padding-right: 14px;
+  border: 1px solid #d0d0d0;
+  border-right: none;
+  font-size: 14px;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .behind-container {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .behind-right {
+    order: 1;
+    width: 100%;
+    min-height: 180px;
+  }
+
+  .behind-left {
+    order: 2;
+    width: 100%;
+  }
+
+  .behind-img {
+    object-position: left center;
+  }
+
+  .behind-title {
+    font-size: 22px;
+  }
+
+.behind-cta {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .behind-cta input {
+     width: 100%;
+    min-height: 52px;            
+    height: auto;                
+    padding: 14px 16px;          
+    font-size: 15px;
+    line-height: 1.4;            
+    border-radius: 8px;
+    border: 1px solid #d0d0d0;
+
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .behind-cta button {
+    width: 100%;
+    height: 52px;              
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 8px;
+  }
+  .input-wrap input {
+    min-height: 52px;
+    height: auto;
+    padding: 14px 16px 14px 44px;
+    font-size: 15px;
+    line-height: 1.4;
+    border-radius: 8px;
+    border-right: 1px solid #d0d0d0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .mail-icons {
+    left: 16px;
+    font-size: 17px;
+  }
+
+}
+
+.behind-cta button:disabled {
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+
+.processing-dots {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 6px;
+  height: 100%;
+}
+
+.processing-dots span {
+  display: inline-block;
+  opacity: 0.3;
+  animation: dotPulse 1.4s infinite;
+  font-weight: bold;
+  margin: 0 1px;
+}
+
+.processing-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.processing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.processing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotPulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.behind-cta input:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+  background-color: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+  .processing-dots {
+    margin-right: 8px;
+  }
+  
+  .behind-cta button:disabled {
+    opacity: 0.9;
+  }
+}

@@ -1,0 +1,132 @@
+.speakers {
+  background: linear-gradient(180deg, #1d4ed8 0%, #0b2c8f 100%);
+  padding: 30px 20px;
+  color: #F5AB40;
+  font-family: "Satoshi", sans-serif;
+}
+
+.speakers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.speakers-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.speaker-card {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 36px;
+  align-items: flex-start;
+}
+
+.speaker-img {
+  border-radius: 8px;
+  width: 180px;
+  height: 180px;
+  object-fit: fill;
+}
+
+.speaker-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #00FFFF;
+}
+
+.speaker-content p {
+  font-size: 18px;
+font-weight: 500; 
+ line-height: 2;
+  color: #FFFFFF;
+}
+.speaker-footer {
+  position: relative;
+  margin-top: 40px;
+  border-radius: 4px;
+  background-image: url("/featurespeaker/additional-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+.speaker-footer div{
+  width: 950px;
+  margin: 0 auto;
+}
+
+.speaker-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
+
+.speaker-footer h4,
+.speaker-footer p {
+  position: relative;
+  z-index: 1;
+}
+
+.speaker-footer h4 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #00ffff;
+  margin-bottom: 10px;
+}
+
+.speaker-footer p {
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .speaker-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .speaker-img {
+    width: 250px;
+    height: 230px;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+
+  .speaker-content h3 {
+    font-size: 18px;
+  }
+
+  .speaker-content p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .speaker-footer div {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+}
+@media (max-width: 350px) {
+  .speaker-img {
+    width: 200px;
+    height: 180px;
+  }
+
+  .speaker-content p {
+    font-size: 14px;
+  }
+
+  .speaker-footer {
+    padding: 20px 14px;
+  }
+}
+

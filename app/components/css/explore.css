@@ -1,0 +1,141 @@
+.explore {
+  background: #D2E1FF80;
+  padding: 20px 24px;
+  font-family: "Satoshi", sans-serif;
+}
+
+.explore-header {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.explore-header h2 {
+  color: #F5AB40;
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.explore-header p {
+  font-size: 18px;
+  color:#000000;
+}
+
+.explore-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.explore-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.explore-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.explore-card:hover::before {
+  transform: scaleX(1);
+}
+
+.explore-card:hover .explore-card-top img {
+  animation: iconBounce 0.6s ease;
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.explore-card:hover {
+  background: linear-gradient(145deg, #ffffff, #f8faff);
+}
+
+.explore-card:hover .explore-card-top h3 {
+  color: #25286a;
+  transition: color 0.3s ease;
+}
+
+.explore-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.explore-card-top h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.explore-desc {
+  font-size: 15px;
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
+.explore-card:hover .explore-desc {
+  color: #333333;
+}
+
+@media (max-width: 768px) {
+  .explore-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .explore-card {
+    padding: 16px;
+  }
+
+  .explore-card-top {
+    align-items: center;
+  }
+
+  .explore-card-top h3 {
+    font-size: 14px;
+  }
+
+  .explore-desc {
+    font-size: 13px;
+    margin-left: 40px; 
+  }
+  
+  .explore-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 350px) {
+  .explore-desc {
+    margin-left: 0;
+  }
+}
