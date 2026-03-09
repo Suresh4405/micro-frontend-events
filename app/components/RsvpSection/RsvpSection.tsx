@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import "../css/rsvp.css";
-import { clickrsvp } from "../../actions/route"; 
+import { clickrsvp } from "../../actions/rsvp"; 
 import { useToast } from "../providers/toast-provider";
 
 export default function RsvpSection() {

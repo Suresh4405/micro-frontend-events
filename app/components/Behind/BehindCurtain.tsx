@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import "../css/curtain.css";
-import { clickrsvp } from "../../actions/route"; 
+import { clickrsvp } from "../../actions/rsvp"; 
 import { useToast } from "../providers/toast-provider";
 
 export default function Behind() {
