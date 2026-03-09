@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import "../css/rsvp.css";
-import { clickrsvp } from "../action/route"; 
+import { clickrsvp } from "../../actions/route"; 
 import { useToast } from "../providers/toast-provider";
 
 export default function RsvpSection() {
@@ -14,6 +14,7 @@ export default function RsvpSection() {
     e.preventDefault();
     setIsSubmitting(true);
     
+
     const formData = new FormData(e.currentTarget);
     const email = formData.get("email") as string;
     

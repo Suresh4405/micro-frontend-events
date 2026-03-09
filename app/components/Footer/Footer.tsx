@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import "../css/footer.css";
-import { clickrsvp } from "../action/route"; 
+import { clickrsvp } from "../../actions/route"; 
 
 import { useToast } from "../providers/toast-provider";
 
