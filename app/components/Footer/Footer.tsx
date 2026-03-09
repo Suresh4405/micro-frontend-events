@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import "../css/footer.css";
-import { clickrsvp } from "../api/rsvp/route";
+import { clickrsvp } from "../action/route"; 
 
 import { useToast } from "../providers/toast-provider";
 
@@ -40,6 +40,7 @@ export default function Footer() {
       setIsSubmitting(false);
     }
   };
+  
   return (
     <section className="footer-cta">
       <div className="footer-overlay">
@@ -84,7 +85,7 @@ export default function Footer() {
           </div>
 
           <p className="footer-copyright">
-            © 2009–2025 · Suresh Code. All Rights Reserved.
+            © 2002–2026 · Suresh Code. All Rights Reserved.
           </p>
         </div>
       </div>

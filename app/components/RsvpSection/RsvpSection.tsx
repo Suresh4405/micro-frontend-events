@@ -2,12 +2,11 @@
 
 import { useState, useRef } from "react";
 import "../css/rsvp.css";
-import { clickrsvp } from "../api/rsvp/route";
-
+import { clickrsvp } from "../action/route"; 
 import { useToast } from "../providers/toast-provider";
 
 export default function RsvpSection() {
- const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const { showToast } = useToast();
 
@@ -26,7 +25,7 @@ export default function RsvpSection() {
     
     try {
       await clickrsvp(formData);
-      showToast("thanks for connecting!", "success");
+      showToast("Thanks for connecting!", "success");
       if (formRef.current) {
         formRef.current.reset();
       }
@@ -73,7 +72,7 @@ export default function RsvpSection() {
         </form>
 
         <p className="rsvp-paragraph">
-         The world's most influential leaders, technologists, and policymakers are coming together for a historic two-day dialogue on artificial intelligence—its promise, its perils, and the path forward for 8 billion people.
+          The world's most influential leaders, technologists, and policymakers are coming together for a historic two-day dialogue on artificial intelligence—its promise, its perils, and the path forward for 8 billion people.
         </p>
 
         <p className="rsvp-paragraph">
@@ -87,7 +86,7 @@ export default function RsvpSection() {
         </h2>
 
         <p className="rsvp-paragraph">
-         This is not just another tech conference. This is a closed-door, high-stakes convening of the people actually building, regulating, and deploying AI at global scale. For the first time, heads of state sit beside tech founders to answer one question
+          This is not just another tech conference. This is a closed-door, high-stakes convening of the people actually building, regulating, and deploying AI at global scale. For the first time, heads of state sit beside tech founders to answer one question
         </p>
       </div>
     </section>
