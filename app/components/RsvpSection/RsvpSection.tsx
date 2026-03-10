@@ -3,38 +3,53 @@
 import { useState, useRef } from "react";
 import "../css/rsvp.css";
 import { clickrsvp } from "../../actions/rsvp"; 
-import { useToast } from "../providers/toast-provider";
 
 export default function RsvpSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [toastMessage, setToastMessage] = useState<{text: string, type: 'success' | 'error'} | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
-  const { showToast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setToastMessage(null);
     
-
     const formData = new FormData(e.currentTarget);
     const email = formData.get("email") as string;
     
     if (!email || !email.includes("@")) {
-      showToast("Please enter a valid email address", "error");
+      setToastMessage({
+        text: "Please enter a valid email address",
+        type: "error"
+      });
       setIsSubmitting(false);
       return;
     }
     
     try {
       await clickrsvp(formData);
-      showToast("Thanks for connecting!", "success");
+      setToastMessage({
+        text: "Thanks for connecting!",
+        type: "success"
+      });
       if (formRef.current) {
         formRef.current.reset();
       }
+      
+      setTimeout(() => {
+        setToastMessage(null);
+      }, 3000);
+      
     } catch (error) {
-      showToast(
-        error instanceof Error ? error.message : "Failed to submit",
-        "error"
-      );
+      setToastMessage({
+        text: error instanceof Error ? error.message : "Failed to submit",
+        type: "error"
+      });
+      
+      setTimeout(() => {
+        setToastMessage(null);
+      }, 3000);
+      
     } finally {
       setIsSubmitting(false);
     }
@@ -70,6 +85,27 @@ export default function RsvpSection() {
               )}
             </button>
           </div>
+          
+          {toastMessage && (
+            <div 
+              className={`toast-message ${toastMessage.type}`}
+              style={{
+                marginTop: "12px",
+                padding: "10px 16px",
+                borderRadius: "4px",
+                background: toastMessage.type === "success" ? "#29aa7f" : "#EF4444",
+                color: "white",
+                fontSize: "14px",
+                fontWeight: "500",
+                textAlign: "center",
+                animation: "fadeIn 0.3s ease-out",
+                width: "100%"
+              }}
+            >
+              {toastMessage.type === "success" ? "✓ " : "✕ "}
+              {toastMessage.text}
+            </div>
+          )}
         </form>
 
         <p className="rsvp-paragraph">
